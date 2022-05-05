@@ -131,9 +131,10 @@ function main(startPos){
 
     if(max > 1000){max-= 1000;}
 
+    let moves = visited[index].moves;
+    for(let i = 0; i < moves.length; i++) {moves[i] = moves[i] + 1;}
+
     document.getElementById("demo").innerHTML =
-    "The best possible set of moves is: "+JSON.stringify(visited[index].moves+ " With a score of: "+ max);
-
-
+    "The best possible set of moves is: ".concat(JSON.stringify(visited[index].moves).concat( "<br>With a score of: ").concat(max));
 
 }
