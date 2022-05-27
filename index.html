@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>Ornatebyte</title>
-  <style>
-
+    <title>Ornatebyte</title>
+    <style>
       .header {
         background-color: #f1f1f1;
         padding: 20px 10px;
       }
-      
+
       #header {
-          height: 45px;
+        height: 45px;
       }
 
       .header a {
@@ -37,10 +36,9 @@
         background-color: dodgerblue;
         color: white;
       }
-      
 
       .header-right a {
-          float: right;
+        float: right;
       }
 
       .dropdown {
@@ -54,7 +52,7 @@
         display: none;
         position: absolute;
         background-color: #f9f9f9;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         border-radius: 10px;
         z-index: 2;
       }
@@ -67,95 +65,105 @@
         display: block;
       }
 
-
       .AboutMe {
-          position: relative;
-          display: inline-block;
-          left: 25%;
-          transform: translateX(-50%);
+        position: relative;
+        display: inline-block;
+        left: 25%;
+        transform: translateX(-50%);
       }
       .AboutMe p {
-          display: inline-block;
-          position: absolute;
-          width: 50vw;
-          border-radius: 5px 20px;
-          border: 1px;
-          padding: 10px;
-          border-color: black;
-          border-style: solid;
-          background-color: #dddddd;
+        display: inline-block;
+        position: absolute;
+        width: 50vw;
+        border-radius: 5px 20px;
+        border: 1px;
+        padding: 10px;
+        border-color: black;
+        border-style: solid;
+        background-color: #dddddd;
 
-          text-align: center;
-          
+        text-align: center;
       }
 
-      @media (orientation : portrait) { /* If on mobile */
-          #header {
+      @media (orientation: portrait) {
+        /* If on mobile */
+        #header {
           height: auto;
-          }
+        }
 
-          .header a {
+        .header a {
           float: none;
           display: block;
           text-align: left;
-          }
-          .header-right {
+        }
+        .header-right {
           float: none;
-          }
-          .dropdown {
+        }
+        .dropdown {
           float: none;
           display: block;
           text-align: left;
-          }
-          .dropdown:hover .dropdown-contents {
-              display: none;
-          }
-          .AboutMe {
-              left: 12.5%;
-          }
-          .AboutMe p {
-              width: 75vw;
-          }
+        }
+        .dropdown:hover .dropdown-contents {
+          display: none;
+        }
+        .AboutMe {
+          left: 12.5%;
+        }
+        .AboutMe p {
+          width: 75vw;
+        }
       }
+    </style>
 
-  </style>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-V99RL63YST"></script>
-  <script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=G-V99RL63YST"
+    ></script>
+    <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-V99RL63YST');
-  </script>
-</head>
-<body>
- 
-  <div class="header" id="header">
+      gtag("config", "G-V99RL63YST");
+    </script>
+  </head>
+  <body>
+    <div class="header" id="header">
       <a href="/" class="logo">Dalton Britton</a>
       <div class="header-right">
-          <a href="/Contact">Contact</a>
-          <div class="dropdown">
-              <a href="/Projects">Projects</a>
-              <div class="dropdown-contents">
-                <p style="text-align: center;display: block;margin-top: 10px;">
-                  <a href="/Projects">Projects</a><br><br>
-                  <a href="/Projects/RayMarching">RayMarching</a><br><br>
-                  <a href="/Projects/FaceAI">FaceAI</a><br><br>
-                  <a href="/Projects/Mancala">Mancala</a>
-              </p>
-              </div>
+        <a href="/Contact">Contact</a>
+        <div class="dropdown">
+          <a href="/Projects">Projects</a>
+          <div class="dropdown-contents">
+            <p style="text-align: center; display: block; margin-top: 10px">
+              <a href="/Projects">Projects</a><br /><br />
+              <a href="/Projects/RayMarching">RayMarching</a><br /><br />
+              <a href="/Projects/FaceAI">FaceAI</a><br /><br />
+              <a href="/Projects/Mancala">Mancala</a>
+            </p>
           </div>
-          <a class="active" href="/">About</a>
+        </div>
+        <a class="active" href="/">About</a>
       </div>
-  </div>
-  <br><br>
-  <div class="AboutMe">
-      <p>Hello my name is Dalton Britton. In 2016 I started programming, mainly working on web development until late 2017. I quickly became entranced with robotics, leading me to create: a line following a robot, an object avoiding a car, and competing in robotic sumo wrestling. In 2019 I started learning Machine learning, later creating FaceAI V1 in early 2020. In mid 2021 I started taking Java programming classes focused on Mobile Development and Database design and implementation. During which I received the opportunity to compete in a game development competition where I learned C# and Unity.</p>
-  </div>
-  <br><br>
-
-
-
-</body></html>
+    </div>
+    <br /><br />
+    <div class="AboutMe">
+      <p>
+        Hello my name is Dalton Britton. In 2016 I started programming, mainly
+        working on web development until late 2017. I quickly became entranced
+        with robotics, leading me to create: a line following a robot, an object
+        avoiding a car, and competing in robotic sumo wrestling. In 2019 I
+        started learning Machine learning, later creating FaceAI V1 in early
+        2020. In mid 2021 I started taking Java programming classes focused on
+        Mobile Development and Database design and implementation. During which
+        I received the opportunity to compete in a game development competition
+        where I learned C# and Unity.
+      </p>
+    </div>
+    <br /><br />
+  </body>
+</html>
