@@ -3,300 +3,465 @@
   <head>
     <title>Ornatebyte</title>
     <style>
+      .header {
+        background-color: #f1f1f1;
+        padding: 20px 10px;
+      }
 
-        .header {
-          background-color: #f1f1f1;
-          padding: 20px 10px;
-        }
-        
+      #header {
+        height: 45px;
+      }
+
+      .header a {
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 10px;
+        font-size: 18px;
+        line-height: 25px;
+        border-radius: 10px;
+      }
+
+      .header a.logo {
+        font-size: 25px;
+        font-weight: bold;
+      }
+
+      .header a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      .header a.active {
+        background-color: dodgerblue;
+        color: white;
+      }
+
+      .header-right a {
+        float: right;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        float: right;
+        z-index: 2;
+      }
+
+      .dropdown-contents {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        z-index: 2;
+      }
+
+      .dropdown-contents a {
+        float: none;
+      }
+
+      .dropdown:hover .dropdown-contents {
+        display: block;
+      }
+
+      .Text p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-align: center;
+        width: 50%;
+        margin: auto;
+      }
+
+      .Text a {
+        color: #0645ad;
+      }
+
+      .Text img {
+        max-width: 45%;
+        height: auto;
+        object-fit: contain;
+        margin: auto;
+        display: block;
+      }
+
+      .Slideshow {
+        max-width: 75%;
+        height: 75%;
+        background-color: #ddd;
+        position: relative;
+        margin: auto;
+      }
+
+      .Slideshow img {
+        height: calc(100vw * 0.25);
+        display: none;
+        margin: auto;
+      }
+
+      .prev,
+      .next {
+        position: absolute;
+        text-align: center;
+        top: 40%;
+        font-size: 5vw;
+      }
+
+      .next {
+        right: 0;
+      }
+
+      .prev:hover,
+      .next:hover {
+        background-color: #ccc;
+      }
+
+      @media (orientation: portrait) {
+        /* If on mobile */
         #header {
-            height: 45px;
+          height: auto;
         }
 
         .header a {
-          float: left;
-          color: black;
-          text-align: center;
-          padding: 10px;
-          font-size: 18px;
-          line-height: 25px;
-          border-radius: 10px;
-        }
-
-        .header a.logo {
-          font-size: 25px;
-          font-weight: bold;
-        }
-
-        .header a:hover {
-          background-color: #ddd;
-          color: black;
-        }
-
-        .header a.active {
-          background-color: dodgerblue;
-          color: white;
-        }
-        
-
-        .header-right a {
-            float: right;
-        }
-
-        .dropdown {
-          position: relative;
-          display: inline-block;
-          float: right;
-          z-index: 2;
-        }
-
-        .dropdown-contents {
-          display: none;
-          position: absolute;
-          background-color: #f9f9f9;
-          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-          border-radius: 10px;
-          z-index: 2;
-        }
-
-        .dropdown-contents a {
-          float: center;
-        }
-
-        .dropdown:hover .dropdown-contents {
+          float: none;
           display: block;
+          text-align: left;
+        }
+        .header-right {
+          float: none;
+        }
+        .dropdown {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+        .dropdown:hover .dropdown-contents {
+          display: none;
         }
 
-        .Text p, h1, h2, h3, h4, h5, h6{
-            text-align: center;
-            width: 50%;
-            margin: auto;
+        .Text p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          text-align: center;
+          width: 75%;
+          margin: auto;
         }
-        
-        .Text a {
-            color:#0645AD;
-        }
-
-        .Text img {
-            max-width: 45%;
-            height: auto;
-            object-fit: contain;
-            margin: auto;
-            display: block;
-        }
-
-        .Slideshow {
-            max-width: 75%;
-            height: 75%;
-            background-color: #ddd; 
-            position: relative;
-            margin: auto;
-        }
-
-        .Slideshow img {
-            
-            height: calc(100vw * 0.25);
-            display: none;
-            margin: auto;
-        }
-
-        .prev, .next {
-            position: absolute;
-            text-align: center;
-            top: 40%;
-            font-size: 5vw;
-        }
-
-        .next {
-            right: 0;
-        }
-
-        .prev:hover, .next:hover {
-            background-color: #ccc; 
-        }
-
-        @media (orientation : portrait) { /* If on mobile */
-          #header {
-            height: auto;
-          }
-
-          .header a {
-            float: none;
-            display: block;
-            text-align: left;
-          }
-          .header-right {
-            float: none;
-          }
-          .dropdown {
-            float: none;
-            display: block;
-            text-align: left;
-          }
-          .dropdown:hover .dropdown-contents {
-              display: none;
-          }
-
-          .Text p, h1, h2, h3, h4, h5, h6{
-            text-align: center;
-            width: 75%;
-            margin: auto;
-          }
-        }
-
+      }
     </style>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V99RL63YST"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-V99RL63YST"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'G-V99RL63YST');
+      gtag("config", "G-V99RL63YST");
     </script>
   </head>
   <body>
-    <!Header Start>
     <div class="header" id="header">
-        <a href="/" class="logo">Dalton Britton</a>
-        <div class="header-right">
-            <a href="/Contact">Contact</a>
-            <div class="dropdown">
-                <a class="active" href="/Projects">Projects</a>
-                <div class="dropdown-contents">
-                    <a href="/Projects">Projects</a>
-                    <a class="active" href="/Projects/RayMarching">RayMarching</a>
-                    <a href="/Projects/FaceAI">FaceAI</a>
-                    <a href="/Projects/Mancala">Mancala</a>
-                </div>
-            </div>
-            <a href="/">About</a>
+      <a href="/" class="logo">Dalton Britton</a>
+      <div class="header-right">
+        <a href="/Contact">Contact</a>
+        <div class="dropdown">
+          <a href="/Projects">Projects</a>
+          <div class="dropdown-contents">
+            <p style="text-align: center; display: block; margin-top: 10px">
+              <a href="/Projects">Projects</a><br /><br />
+              <a href="/Projects/RayMarching">RayMarching</a><br /><br />
+              <a href="/Projects/FaceAI">FaceAI</a><br /><br />
+              <a href="/Projects/Mancala">Mancala</a>
+            </p>
+          </div>
         </div>
+        <a class="active" href="/">About</a>
+      </div>
     </div>
-    <!Header End>
 
     <div class="Text">
-        <br><br>
-        <h1 style="height: 75%;"><a style="text-decoration: none; color: inherit;" href="https://github.com/unadalton2/Ray-Marching">Introduction to Ray Marching</a></h1>
-        <p>by Dalton Britton</p><br>
+      <br /><br />
+      <h1 style="height: 75%">
+        <a
+          style="text-decoration: none; color: inherit"
+          href="https://github.com/unadalton2/Ray-Marching"
+          >Introduction to Ray Marching</a
+        >
+      </h1>
+      <p>by Dalton Britton</p>
+      <br />
 
-        <h2>Introduction to Ray Tracing</h2>
-        <p>Ray Tracing, like Ray Marching, is a common rendering method used to realistically simulate light. Ray Tracing works by casting rays out from the camera then calculating intersection points between the ray and typically triangles. Note: Ray Tracing is not required to work with triangles<br> Example of ray tracing below by <a href="https://github.com/marczych/RayTracer">marczych</a>:</p>
-        
-        <a href="https://github.com/marczych/RayTracer"><img src="https://raw.githubusercontent.com/marczych/RayTracer/master/samples/refraction_2_1.jpg"></a>
-        <br><br>
+      <h2>Introduction to Ray Tracing</h2>
+      <p>
+        Ray Tracing, like Ray Marching, is a common rendering method used to
+        realistically simulate light. Ray Tracing works by casting rays out from
+        the camera then calculating intersection points between the ray and
+        typically triangles. Note: Ray Tracing is not required to work with
+        triangles<br />
+        Example of ray tracing below by
+        <a href="https://github.com/marczych/RayTracer">marczych</a>:
+      </p>
 
-        <h2>Introduction to Raymarching</h2>
-        <p>Ray Marching, like Ray Tracing, uses rays to simulate light. The main difference between Ray Tracing and Ray Marching, is how the intersections are calculated. Ray Tracing calculates the intersection of a ray with a triangle, while Ray Marching calculates the distance to the nearest point on all objects in a scene. Ray Marching calulates the distance by using a signed distance function(SDF). Finally Ray Marching repeatedly marches along the ray until the distance is below some threshold, which it considers a intersection. <br> Example of marching along a ray:</p>
-        <img src="images/MarchingExample.png">
-        <br><br>
+      <a href="https://github.com/marczych/RayTracer"
+        ><img
+          src="https://raw.githubusercontent.com/marczych/RayTracer/master/samples/refraction_2_1.jpg"
+      /></a>
+      <br /><br />
 
-        <h3>Benefits of Raymarching</h3>
-        <br>
-        <h4>Beveled edges</h4>
-        <p>The SDF returns the distance to the closest point on the surface of an object. A simple way to add a Bevel to an object is to expand an object’s borders. Any faces on an object will expand outwards but remain relatively unchanged, while corners and edges will become rounded as a result. You're effectively tricking the SDF into thinking the boundaries of an object are closer than in reality. This simply means to expand an object you take that object’s signed distance function and subtract the desired bevel radius.</p>
-        <br><img src="images/Bevel.png" style="max-width: 35%; height: auto;">
-        <br><br>
+      <h2>Introduction to Raymarching</h2>
+      <p>
+        Ray Marching, like Ray Tracing, uses rays to simulate light. The main
+        difference between Ray Tracing and Ray Marching, is how the
+        intersections are calculated. Ray Tracing calculates the intersection of
+        a ray with a triangle, while Ray Marching calculates the distance to the
+        nearest point on all objects in a scene. Ray Marching calulates the
+        distance by using a signed distance function(SDF). Finally Ray Marching
+        repeatedly marches along the ray until the distance is below some
+        threshold, which it considers a intersection. <br />
+        Example of marching along a ray:
+      </p>
+      <img src="images/MarchingExample.png" />
+      <br /><br />
 
-        <h4>Boolean Operations</h4><br>
-        <h5>Union</h5>
-        <p>The Union Boolean operator is arguably the simplest of the three main operators. The Union operator simply merges two objects by taking the min of the object’s distance functions. In short this means it takes the safest distance as to not over march. There are other more complex operations to smooth the transition between objects, for more information see <a href="https://iquilezles.org">https://iquilezles.org</a>.</p>
-        <br><br>
+      <h3>Benefits of Raymarching</h3>
+      <br />
+      <h4>Beveled edges</h4>
+      <p>
+        The SDF returns the distance to the closest point on the surface of an
+        object. A simple way to add a Bevel to an object is to expand an
+        objectï¿½s borders. Any faces on an object will expand outwards but remain
+        relatively unchanged, while corners and edges will become rounded as a
+        result. You're effectively tricking the SDF into thinking the boundaries
+        of an object are closer than in reality. This simply means to expand an
+        object you take that objectï¿½s signed distance function and subtract the
+        desired bevel radius.
+      </p>
+      <br /><img src="images/Bevel.png" style="max-width: 35%; height: auto" />
+      <br /><br />
 
-        <!-- Slideshow -->
-        <div class="Slideshow1 Slideshow">
-            <img class="Slides1" src="images/Union3D.png">
-            <img class="Slides1" src="images/Union3Dv2.png">
-            <a class="prev" onclick="updateSlides(-1, 0)">&#10094;</a>
-            <a class="next" onclick="updateSlides(1, 0)">&#10095;</a>
-        </div><br><br>
+      <h4>Boolean Operations</h4>
+      <br />
+      <h5>Union</h5>
+      <p>
+        The Union Boolean operator is arguably the simplest of the three main
+        operators. The Union operator simply merges two objects by taking the
+        min of the objectï¿½s distance functions. In short this means it takes the
+        safest distance as to not over march. There are other more complex
+        operations to smooth the transition between objects, for more
+        information see
+        <a href="https://iquilezles.org">https://iquilezles.org</a>.
+      </p>
+      <br /><br />
 
-        <h5>Intersection</h5>
-        <p>The Intersection operator outputs the shape of the intersection of two objects. Intersection is just the opposite of the Union operator. Instead of taking the min of the object’s distance functions, instead we take the max.</p>
-        <br><br>
+      <!-- Slideshow -->
+      <div class="Slideshow1 Slideshow">
+        <img class="Slides1" src="images/Union3D.png" />
+        <img class="Slides1" src="images/Union3Dv2.png" />
+        <a class="prev" onclick="updateSlides(-1, 0)">&#10094;</a>
+        <a class="next" onclick="updateSlides(1, 0)">&#10095;</a>
+      </div>
+      <br /><br />
 
-        <img style="height: calc(15vw);" src="images/Intersection.png"><br><br>
+      <h5>Intersection</h5>
+      <p>
+        The Intersection operator outputs the shape of the intersection of two
+        objects. Intersection is just the opposite of the Union operator.
+        Instead of taking the min of the objectï¿½s distance functions, instead we
+        take the max.
+      </p>
+      <br /><br />
 
+      <img
+        style="height: calc(15vw)"
+        src="images/Intersection.png"
+      /><br /><br />
 
-        <h5>Subtraction</h5>
-        <p>Subtraction like the name suggests cuts out one object from the other. It is slightly more complex than Intersection or Union but not by much. First we invert the object we want to subtract by flipping the sign of its distance function. Inverting the distance function turns the object inside out, all points within the object are now outside, creating a hole where the old object was. Finally taking the Intersection between the original object and the inverted object result in the inverted object being subtracted from the original.</p>
-        <br><br>
+      <h5>Subtraction</h5>
+      <p>
+        Subtraction like the name suggests cuts out one object from the other.
+        It is slightly more complex than Intersection or Union but not by much.
+        First we invert the object we want to subtract by flipping the sign of
+        its distance function. Inverting the distance function turns the object
+        inside out, all points within the object are now outside, creating a
+        hole where the old object was. Finally taking the Intersection between
+        the original object and the inverted object result in the inverted
+        object being subtracted from the original.
+      </p>
+      <br /><br />
 
-        <!-- Slideshow -->
-        <div class="Slideshow2 Slideshow">
-            <img class="Slides2" src="images/SubtractCircle.png">
-            <img class="Slides2" src="images/SubtractSquare.png">
-            <img class="Slides2" src="images/SubtractSphere3D.png">
-            <img class="Slides2" src="images/SubtractCube3D.png">
-            <a class="prev" onclick="updateSlides(-1, 1)">&#10094;</a>
-            <a class="next" onclick="updateSlides(1, 1)">&#10095;</a>
-        </div><br><br>
+      <!-- Slideshow -->
+      <div class="Slideshow2 Slideshow">
+        <img class="Slides2" src="images/SubtractCircle.png" />
+        <img class="Slides2" src="images/SubtractSquare.png" />
+        <img class="Slides2" src="images/SubtractSphere3D.png" />
+        <img class="Slides2" src="images/SubtractCube3D.png" />
+        <a class="prev" onclick="updateSlides(-1, 1)">&#10094;</a>
+        <a class="next" onclick="updateSlides(1, 1)">&#10095;</a>
+      </div>
+      <br /><br />
 
-        <h4>Spherical Worlds</h4>
-        <p>Spherical Worlds are the simplest and easiest to use of the non-Euclidean transformation. In this case a spherical world just means a world in which repeats infinitely over some period. Since all signed distance functions all take in at least a point in space to calculate the distance from, we can manipulate the point before sending it to the SDF. For example, by subtracting one to the y component of the point we can effectively translate the object one unit up in space. Creating Spherical worlds is as simple as forcing the point to stay within some bounds without changing or manipulating distances calculated by the SDF. A point with a distance to point b must have the same "distance" after the manipulation. The simplest way to do this is to take the modulo of a point and the desired world size.</p>
-        <br></br>
+      <h4>Spherical Worlds</h4>
+      <p>
+        Spherical Worlds are the simplest and easiest to use of the
+        non-Euclidean transformation. In this case a spherical world just means
+        a world in which repeats infinitely over some period. Since all signed
+        distance functions all take in at least a point in space to calculate
+        the distance from, we can manipulate the point before sending it to the
+        SDF. For example, by subtracting one to the y component of the point we
+        can effectively translate the object one unit up in space. Creating
+        Spherical worlds is as simple as forcing the point to stay within some
+        bounds without changing or manipulating distances calculated by the SDF.
+        A point with a distance to point b must have the same "distance" after
+        the manipulation. The simplest way to do this is to take the modulo of a
+        point and the desired world size.
+      </p>
+      <br />
 
-        <h1>Ntoe: Render Cirlce World</h1>
+      <h1>Note: Render Circle World</h1>
 
-        <!-- Slideshow -->
-        <div class="Slideshow3 Slideshow">
-            <img class="Slides3" src="images/CircularWorld.png">
-            <img class="Slides3" src="images/CircularWorld2.png">
-            <img class="Slides3" src="images/SphericalWorld.png">
-            <a class="prev" onclick="updateSlides(-1, 2)">&#10094;</a>
-            <a class="next" onclick="updateSlides(1, 2)">&#10095;</a>
-        </div><br><br>
+      <!-- Slideshow -->
+      <div class="Slideshow3 Slideshow">
+        <img class="Slides3" src="images/CircularWorld.png" />
+        <img class="Slides3" src="images/CircularWorld2.png" />
+        <img class="Slides3" src="images/SphericalWorld.png" />
+        <a class="prev" onclick="updateSlides(-1, 2)">&#10094;</a>
+        <a class="next" onclick="updateSlides(1, 2)">&#10095;</a>
+      </div>
+      <br /><br />
 
-        <h4>Space Folding</h4>
-        <p>Folding space duplicates objects across a plane. This effectively creates an infinitly long and tall mirror within a scene, but with some key differences. Difference #1: Mirrors cannot only reflect once, two mirrors pointing at each other will not create infinite objects they will instead usually only create <em>2<sup>n</sup></em> objects where <em>n</em> is the number of mirrors. DIfference #2: Any part of an object behind a mirror will be deleted. Difference #3: Rays do not calculate intersections with the mirror/fold. Difference #4: Rays do not change direction when they pass through a mirror. These differences may seem extreme but they are perfect for creating complex objects. Specifically difference #2, the ability to create an exponential number of objects with a linear number of operations.</p><br>
-        <p>There are two main ways to fold space. Both methods use, like spherical worlds, the manipulation of the SDF's input point. The first and most simple way is to take the absolute value one or more axis of the input point <em>p</em>. For example taking the absolute value of the <em>x</em> component of <em>p</em> maps <em>(-x,y,z)</em> to <em>(x, y, z)</em> where x<em><0</em>. This effectively tricks the SDF into thinking two or more distinct points are the same. The only problem with this method of folding space is that you can only apply this on one or more of the three major axis. The solution is much more complicated, one implementation by <a href="https://www.fractalforums.com/sierpinski-gasket/kaleidoscopic-(escape-time-ifs)/msg34976/#msg34976">AndyAlias</a>, creates a fold where <em>n1</em> is the normal of the plane:
-        <h2><a href="Demo.zip">Download Demo</a></h2>
-        <br><br>
+      <h4>Space Folding</h4>
+      <p>
+        Folding space duplicates objects across a plane. This effectively
+        creates an infinitly long and tall mirror within a scene, but with some
+        key differences. Difference #1: Mirrors cannot only reflect once, two
+        mirrors pointing at each other will not create infinite objects they
+        will instead usually only create <em>2<sup>n</sup></em> objects where
+        <em>n</em> is the number of mirrors. DIfference #2: Any part of an
+        object behind a mirror will be deleted. Difference #3: Rays do not
+        calculate intersections with the mirror/fold. Difference #4: Rays do not
+        change direction when they pass through a mirror. These differences may
+        seem extreme but they are perfect for creating complex objects.
+        Specifically difference #2, the ability to create an exponential number
+        of objects with a linear number of operations.
+      </p>
+      <br />
+      <p>
+        There are two main ways to fold space. Both methods use, like spherical
+        worlds, the manipulation of the SDF's input point. The first and most
+        simple way is to take the absolute value one or more axis of the input
+        point <em>p</em>. For example taking the absolute value of the
+        <em>x</em> component of <em>p</em> maps <em>(-x,y,z)</em> to
+        <em>(x, y, z)</em> where x<em><0</em>. This effectively tricks the SDF
+        into thinking two or more distinct points are the same. The only problem
+        with this method of folding space is that you can only apply this on one
+        or more of the three major axis. The solution is much more complicated,
+        one implementation by
+        <a
+          href="https://www.fractalforums.com/sierpinski-gasket/kaleidoscopic-(escape-time-ifs)/msg34976/#msg34976"
+          >AndyAlias</a
+        >, creates a fold where <em>n1</em> is the normal of the plane:
+      </p>
+      <h2><a href="Demo.zip">Download Demo</a></h2>
+      <br /><br />
 
-        <!-- Slideshow -->
-        <div class="Slideshow5 Slideshow">
-            <img class="Slides5" src="images/FractalCube.png">
-            <img class="Slides5" src="images/FractalCubeWithCutout.png">
-            <a class="prev" onclick="updateSlides(-1, 4)">&#10094;</a>
-            <a class="next" onclick="updateSlides(1, 4)">&#10095;</a>
-        </div><br><br>
+      <!-- Slideshow -->
+      <div class="Slideshow5 Slideshow">
+        <img class="Slides5" src="images/FractalCube.png" />
+        <img class="Slides5" src="images/FractalCubeWithCutout.png" />
+        <a class="prev" onclick="updateSlides(-1, 4)">&#10094;</a>
+        <a class="next" onclick="updateSlides(1, 4)">&#10095;</a>
+      </div>
+      <br /><br />
 
-        <h3>Limitations</h3><br>
-        <h4>Near-Misses</h4><br>
-        <h5>Problem:</h5>
-        <p>Unfortunately calculating the intersection of objects where rays travel nearly parallel to an object takes <sup><em>1</em></sup> &#8260; <sub><em>x</em></sub> steps to cover a distance of 1, where x is the distance from the object. When looking at objects taking up little of the screen we can brute force until we meet our max render distance but this is not always feasible.</p>
-        <br><br>
+      <h3>Limitations</h3>
+      <br />
+      <h4>Near-Misses</h4>
+      <br />
+      <h5>Problem:</h5>
+      <p>
+        Unfortunately calculating the intersection of objects where rays travel
+        nearly parallel to an object takes <sup><em>1</em></sup> &#8260;
+        <sub><em>x</em></sub> steps to cover a distance of 1, where x is the
+        distance from the object. When looking at objects taking up little of
+        the screen we can brute force until we meet our max render distance but
+        this is not always feasible.
+      </p>
+      <br /><br />
 
-        <h6>Example:</h6><br>
-        <!-- Slideshow -->
-        <div class="Slideshow4 Slideshow">
-            <img class="Slides4" src="images/NearMiss.png">
-            <img class="Slides4" src="images/NearMissSquare.png">
-            <img class="Slides4" src="images/NearMissSquareCircle.png">
-            <img class="Slides4" src="images/CircularWorld.png">
-            <a class="prev" onclick="updateSlides(-1, 3)">&#10094;</a>
-            <a class="next" onclick="updateSlides(1, 3)">&#10095;</a>
-        </div><br><br>
+      <h6>Example:</h6>
+      <br />
+      <!-- Slideshow -->
+      <div class="Slideshow4 Slideshow">
+        <img class="Slides4" src="images/NearMiss.png" />
+        <img class="Slides4" src="images/NearMissSquare.png" />
+        <img class="Slides4" src="images/NearMissSquareCircle.png" />
+        <img class="Slides4" src="images/CircularWorld.png" />
+        <a class="prev" onclick="updateSlides(-1, 3)">&#10094;</a>
+        <a class="next" onclick="updateSlides(1, 3)">&#10095;</a>
+      </div>
+      <br /><br />
 
-        <h4>Solutions:</h4>
-        <p>Limiting the number of steps of the Ray Marching is a crude but necessary solution. But using a limited number of steps introduces a new very serious problem, the render has holes where rays couldn’t reach a surface or the max render distance. All subsequent solutions are an attempt to fix this problem by approximating the missing information.</p>
-        <br><br>
+      <h4>Solutions:</h4>
+      <p>
+        Limiting the number of steps of the Ray Marching is a crude but
+        necessary solution. But using a limited number of steps introduces a new
+        very serious problem, the render has holes where rays couldnï¿½t reach a
+        surface or the max render distance. All subsequent solutions are an
+        attempt to fix this problem by approximating the missing information.
+      </p>
+      <br /><br />
 
-        <p><b>Solution #1: Global Illumination</b></p><br>
-        <p>One way we can approximate the missing information is by adding shading. Light traveling through tight spaces is typically darker than light around a hole. Luckily our distance function retrieves global information, so we can darken a pixel if the distance to an object is less than some threshold.</p>
-        <br><br>
+      <p><b>Solution #1: Global Illumination</b></p>
+      <br />
+      <p>
+        One way we can approximate the missing information is by adding shading.
+        Light traveling through tight spaces is typically darker than light
+        around a hole. Luckily our distance function retrieves global
+        information, so we can darken a pixel if the distance to an object is
+        less than some threshold.
+      </p>
+      <br /><br />
 
-        <p><b>Solution #2: Color Blending</b></p><br>
-        <p>Everytime we call our distance function it retrieves information from the nearest point on an object in a scene. As part of this information we can have it return the expected color at that point. Using the exponential average equation, <em>A<sub>n</sub> = A<sub>n-1</sub> * m + v (1 - m)</em> where <em>v</em> is the current color and <em><sup>1</sup>&#8260;<sub>m</sub></em> is the steps to average, we can calculate blend nearby colors into the pixel. This can also be used to slightly counteract aliasing.</p>
-        <br><br>
+      <p><b>Solution #2: Color Blending</b></p>
+      <br />
+      <p>
+        Everytime we call our distance function it retrieves information from
+        the nearest point on an object in a scene. As part of this information
+        we can have it return the expected color at that point. Using the
+        exponential average equation,
+        <em>A<sub>n</sub> = A<sub>n-1</sub> * m + v (1 - m)</em> where
+        <em>v</em> is the current color and
+        <em><sup>1</sup>&#8260;<sub>m</sub></em> is the steps to average, we can
+        calculate blend nearby colors into the pixel. This can also be used to
+        slightly counteract aliasing.
+      </p>
+      <br /><br />
 
-        <p><b>Solution #3: Expanding borders</b><p><br>
-        <p>The problem occurs because the ray is having trouble reaching the object, we can help it out by expanding the borders out to meet the ray as the ray travels a farther distance. To do this we can continuously slightly expand our borders (as explained above in Bevels) with each step we take.</p>
-        <br><br><br>
+      <p><b>Solution #3: Expanding borders</b></p>
+      <p><br /></p>
+      <p>
+        The problem occurs because the ray is having trouble reaching the
+        object, we can help it out by expanding the borders out to meet the ray
+        as the ray travels a farther distance. To do this we can continuously
+        slightly expand our borders (as explained above in Bevels) with each
+        step we take.
+      </p>
+      <br /><br /><br />
     </div>
 
     <script src="Slideshow.js"></script>
   </body>
 </html>
-
