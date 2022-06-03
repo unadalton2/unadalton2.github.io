@@ -191,9 +191,9 @@
         FaceAI is a simple autoencoder capable of manipulating faces. Using
         tensorflow and keras for the creation and training, FaceAI is able to
         compress images from their raw rgb format to 12.5% the original size.
-        FaceAI does this by maping single values within the compressed image to
+        FaceAI does this by mapping single values within the compressed image to
         larger more general shapes and/or colors in the final image. The high
-        overfitted compression allows the smooth interpolation between faces.
+        overfitting allows the smooth interpolation between faces.
         Meaning shapes and/or colors smoothly change positions and form.
       </p>
       <br /><br />
@@ -210,17 +210,17 @@
       </p>
       <br /><br />
 
-      <h2>Iterpolation</h2>
+      <h2>Interpolation</h2>
       <p>
         Interpolation is the smooth blending between two points. In this case we
         are blending faces together. The model has two main methods to
-        interpolate between faces. The first fading, this method layeres one
+        interpolate between faces. The first fading, this method layers one
         picture on top of the other then fades the overlaid image. The model
-        doesn&#39;t use a ton of fading unless it&#39;s trying to interpolate
+        doesn't use a ton of fading unless it's trying to interpolate
         between very distant faces or when switching between genders as hair
         takes up a lot of space. The second method is much more interesting,
         morphing between faces. Morphing means altering the location and size of
-        facial features making one face look more like another. Morphing&#39;s
+        facial features making one face look more like another. Morphing's
         main benefit is the ability to create a realistic face throughout
         interpolating between faces. Unfortunately morphing is almost never used
         alone, instead FaceAI uses a mix of fading and morphing to interpolate
