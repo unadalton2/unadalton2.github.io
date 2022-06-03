@@ -4,6 +4,24 @@
 <head>
     <title>Ornatebyte</title>
     <style>
+        body {
+            background-color: #151515;
+        }
+        
+        body p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            color: rgb(220, 220, 220);
+        }
+        
+        body a:not(header) {
+            text-decoration-color: rgb(22, 103, 184);
+            color: rgb(22, 0, 184);
+        }
+        
         .header {
             background-color: #f1f1f1;
             padding: 20px 10px;
@@ -11,6 +29,7 @@
         
         #header {
             height: 45px;
+            width: 100%;
         }
         
         .header a {
@@ -91,17 +110,19 @@
         }
         
         .Slideshow {
-            max-width: 75%;
+            max-width: calc(100vw * 0.5);
             height: 75%;
-            background-color: #ddd;
+            background-color: #111;
             position: relative;
             margin: auto;
+            border-radius: 10px;
         }
         
         .Slideshow img {
-            height: calc(100vw * 0.25);
+            height: calc(sqrt(100vw * 0.25)*2);
             display: none;
             margin: auto;
+            padding: 10px;
         }
         
         .prev,
@@ -109,7 +130,9 @@
             position: absolute;
             text-align: center;
             top: 40%;
-            font-size: 5vw;
+            font-size: 2vw;
+            margin-right: 0.5vw;
+            margin-left: 0.5vw;
         }
         
         .next {
